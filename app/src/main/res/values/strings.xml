@@ -7,4 +7,5 @@
     <string name="tip_amount">Tip Amount: %s</string>
     <string name="tip_percentage">Tip Percentage</string>
     <string name="round_up_tip">Round up tip?</string>
+    <string name="tip_percentage_test_tag">tip_percentage_test_tag</string>
 </resources>

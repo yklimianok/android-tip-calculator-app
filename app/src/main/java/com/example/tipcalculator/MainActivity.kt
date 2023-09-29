@@ -32,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
@@ -64,7 +65,7 @@ const val defaultTipPercentRate = 15
 fun TipCalculatorLayout() {
 
     var amountValue by remember { mutableStateOf("") }
-    var tipPercentValue by remember { mutableStateOf(defaultTipPercentRate.toString()) }
+    var tipPercentValue by remember { mutableStateOf("") }
     var roundUpValue by remember { mutableStateOf(false) }
 
     val amount = convertValueToDouble(amountValue)
@@ -110,7 +111,8 @@ fun TipCalculatorLayout() {
             ),
             modifier = Modifier
                 .padding(bottom = 32.dp)
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .testTag(stringResource(R.string.tip_percentage_test_tag)),
         )
         RoundTip(
             checked = roundUpValue,
